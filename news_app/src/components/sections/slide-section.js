@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import ImgMediaCard from "../cards/card";
-import { GridListTile } from "../../../node_modules/@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   root: {
@@ -16,7 +16,10 @@ const styles = theme => ({
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)"
   },
-
+  text: {
+    fontSize: 25,
+    padding: 10,
+  }
 });
 
 function SlideSection(props) {
@@ -24,6 +27,7 @@ function SlideSection(props) {
 
   return (
     <div className={classes.root}>
+    <Typography className={classes.text}>Section Title</Typography>
       <GridList className={classes.gridList} cols={2.5}>
           <ImgMediaCard />
           <ImgMediaCard />
