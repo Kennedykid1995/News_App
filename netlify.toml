@@ -7,9 +7,9 @@ ID = "b41224e5-2148-49c0-b2be-7400424b6f26"
   base    = "news_app"
   # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
   # This is the directory that you are publishing from (relative to root of your repo)
-  publish = "news_app/build/"
+  publish = "news_app/public/"
   # This will be your default build command
-  command = "echo 'default context'"
+  command = "yarn build"
 
       from = "/*"
 
