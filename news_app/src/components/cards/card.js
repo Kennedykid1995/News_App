@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { GridListTile } from '../../../node_modules/@material-ui/core';
 
 const styles = {
   card: {
@@ -27,6 +28,7 @@ const styles = {
 function ImgMediaCard(props) {
   const { classes } = props;
   return (
+    <GridListTile>
     <Card className={classes.card}>
       <CardActionArea>
         <div className={classes.media} />
@@ -45,6 +47,7 @@ function ImgMediaCard(props) {
         </Button>
       </CardActions>
     </Card>
+    </GridListTile>
   );
 }
 
