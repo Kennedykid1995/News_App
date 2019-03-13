@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
   card: {
     margin: 10,
-    width: 345,
+    width: 300,
     boxShadow: 'none',
     borderRadius: 0,
   },
@@ -20,6 +20,7 @@ const styles = {
     objectFit: 'cover',
     background: '#69f0ae',
     height: 140,
+    borderRadius: 10,
   },
 };
 

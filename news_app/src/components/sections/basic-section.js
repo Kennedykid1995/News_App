@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import ImgMediaCard from "../cards/card";
+import ListCard from '../cards/list-card'; 
 
 const styles = theme => ({
   root: {
@@ -19,7 +20,7 @@ const styles = theme => ({
     <div className={classes.root}>
         <Grid container wrap="wrap" spacing={16}>
           <ImgMediaCard />
-          <ImgMediaCard />
+          <ListCard />
         </Grid>
     </div>
   );
