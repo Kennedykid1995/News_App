@@ -9,7 +9,7 @@ ID = "b41224e5-2148-49c0-b2be-7400424b6f26"
   # This is the directory that you are publishing from (relative to root of your repo)
   publish = "news_app/build/"
   # This will be your default build command
-  command = "yarn build"
+  command = "echo 'default context'"
 
       from = "/*"
 
