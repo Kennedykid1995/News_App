@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { GridListTile } from '../../../node_modules/@material-ui/core';
+import {NavLink} from "react-router-dom"; 
 
 const styles = {
   card: {
@@ -22,6 +23,10 @@ const styles = {
     background: '#69f0ae',
     height: 140,
     borderRadius: 10,
+  },
+  text:{
+      textDecoration: 'none',
+      color: 'black',
   },
 };
 
@@ -42,9 +47,11 @@ function ImgMediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
+      <NavLink to="/article" className={classes.text}>
         <Button size="small" color="inherit">
           Read More
         </Button>
+        </NavLink>
       </CardActions>
     </Card>
     </GridListTile>
