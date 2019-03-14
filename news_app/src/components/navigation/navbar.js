@@ -21,9 +21,9 @@ function NavBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar  className={classes.bar} position="fixed" >
+      <AppBar  className={classes.bar} position="static" >
         <Toolbar className={classes.bar}>
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h6" color="inherit" >
             Newsie
           </Typography>
         </Toolbar>
