@@ -6,6 +6,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
+import {NavLink} from "react-router-dom"; 
 
 const styles = theme => ({
   card: {
@@ -38,6 +39,10 @@ const styles = theme => ({
     height: 125,
     alignItems: "flex-start",
     padding: 0
+  },
+  navText:{
+    textDecoration: 'none',
+    color: 'black'
   }
 });
 
@@ -59,9 +64,11 @@ function ListCard(props) {
               Weather for the weekend will be sunny with clear skies.
             </Typography>
             <CardActions>
+            <NavLink to="/article" className={classes.navText}>
               <Button size="small" color="inherit">
                 Read More
               </Button>
+              </NavLink>
             </CardActions>
           </CardContent>
         </div>
