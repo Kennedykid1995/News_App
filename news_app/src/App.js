@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Route } from "react-router-dom";
-import ImgMediaCard from "./components/cards/card";
+import { Route, withRouter } from "react-router-dom";
 import Home from "./components/pages/home"; 
 import Article from "./components/pages/article"
 import NavBar from "./components/navigation/navbar";
+import { connect } from 'react-redux';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <NavBar/>
-        <Route exact path="/" render={props => <Home {...props}/>}/>
-        <Route path="/article" render={props => <Article {...props} />} />
+      <NavBar />
+        <Route exact path="/" component={Home}/>
+        <Route path="/article" component={Article}/>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
