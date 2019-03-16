@@ -1,5 +1,6 @@
 import {
     ERR_FETCHING,
+    FETCH_NEWS,
 } from '../actions/action';
 
 const currentState ={
@@ -12,6 +13,11 @@ const reducers = (state = currentState, action) =>{
         return{
             ...state,
             error: action.payload
+        };
+        case FETCH_NEWS:
+        return{
+            ...state,
+            news: action.payload,
         }
     }
 }

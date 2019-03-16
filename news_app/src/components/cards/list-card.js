@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
 import {NavLink} from "react-router-dom"; 
+import {connect} from "react-redux"
+import {fetchNews} from '../../actions/action'; 
 
 const styles = theme => ({
   card: {
@@ -46,10 +48,17 @@ const styles = theme => ({
   }
 });
 
+
 function ListCard(props) {
   const { classes } = props;
-
-  return (
+  
+  componentDidMount = () => {
+    this.props.fetchNews();
+  }
+   return (
+     <>
+    {this.props.news.map(article => {
+      return(
     <Card className={classes.card}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
@@ -58,10 +67,10 @@ function ListCard(props) {
         <div>
           <CardContent className={classes.text}>
             <Typography gutterBottom variant="h5" component="h2">
-              Title
+              {article.title}
             </Typography>
             <Typography component="p">
-              Weather for the weekend will be sunny with clear skies.
+              {article.author}
             </Typography>
             <CardActions>
             <NavLink to="/article" className={classes.navText}>
@@ -74,7 +83,17 @@ function ListCard(props) {
         </div>
       </div>
     </Card>
+      )
+    })}
+    </>
   );
 }
 
-export default withStyles(styles, { withTheme: true })(ListCard);
+const mapStateToProps = state => {
+  return {
+    news: state.news
+  }
+}
+
+
+export default connect(mapStateToProps,{fetchNews} (withStyles(styles, { withTheme: true })(ListCard)));
