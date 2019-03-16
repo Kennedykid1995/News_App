@@ -1,4 +1,4 @@
-import React from "react";
+import React, {component, Component} from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -52,13 +52,13 @@ const styles = theme => ({
 function ListCard(props) {
   const { classes } = props;
   
-  componentDidMount = () => {
-    this.props.fetchNews();
-  }
+  // componentDidMount = () => {
+  //   this.props.fetchNews();
+  // }
    return (
      <>
-    {this.props.news.map(article => {
-      return(
+    {/* {this.props.news.map(article => {
+      return( */}
     <Card className={classes.card}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
@@ -67,10 +67,10 @@ function ListCard(props) {
         <div>
           <CardContent className={classes.text}>
             <Typography gutterBottom variant="h5" component="h2">
-              {article.title}
+            Title:
             </Typography>
             <Typography component="p">
-              {article.author}
+            Author:
             </Typography>
             <CardActions>
             <NavLink to="/article" className={classes.navText}>
@@ -83,8 +83,8 @@ function ListCard(props) {
         </div>
       </div>
     </Card>
-      )
-    })}
+      {/* )
+    })} */}
     </>
   );
 }
@@ -96,4 +96,5 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps,{fetchNews} (withStyles(styles, { withTheme: true })(ListCard)));
+export default withStyles(styles, { withTheme: true })(ListCard);
+// connect(mapStateToProps,{fetchNews} 

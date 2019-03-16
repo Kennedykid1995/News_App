@@ -4,10 +4,11 @@ import { Route, withRouter } from "react-router-dom";
 import Home from "./components/pages/home"; 
 import Article from "./components/pages/article"
 import NavBar from "./components/navigation/navbar";
-import { connect } from 'react-redux';
-
+import {connect} from "react-redux"
+import {fetchNews} from './actions/action'; 
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -18,4 +19,5 @@ class App extends Component {
     );
   }
 }
+
 export default withRouter(App);
