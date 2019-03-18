@@ -31,7 +31,7 @@ server.get('/articles', async function(req, res, next){
     }
     console.log(data)
     processData()
-    res.send(data)
+    res.end();
 })
 
 

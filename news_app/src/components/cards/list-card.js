@@ -31,7 +31,6 @@ const styles = theme => ({
     width: 151,
     height: 151,
     borderRadius: 10,
-    background: "#18ffff"
   },
   text: {
     marginLeft: 5,
@@ -59,13 +58,12 @@ class ListCard extends React.Component {
 
    return (
      <>
-    {this.props.news.map(article => {
-      console.log(article)
+    {this.props.news.slice(0,3).map((article) => {
       return(
-    <Card className={classes.card}>
+    <Card key={article.id} className={classes.card}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <div className={classes.cover} />
+          <CardMedia className={classes.cover}>{article.urlToImage}</CardMedia>
         </CardContent>
         <div>
           <CardContent className={classes.text}>

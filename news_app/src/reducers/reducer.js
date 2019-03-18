@@ -19,7 +19,7 @@ const reducers = (state = currentState, action) =>{
         return{
             ...state,
             news: action.payload,
-        }
+        };
         default:
         return state;
     }
