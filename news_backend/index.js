@@ -29,8 +29,9 @@ server.get('/articles', async function(req, res, next){
         const responseData = await data.json()
         console.log(responseData);
     }
+    console.log(data)
     processData()
-    res.send("dataFound")
+    res.send(data)
 })
 
 
