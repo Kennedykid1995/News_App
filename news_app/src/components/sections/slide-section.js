@@ -30,8 +30,6 @@ function SlideSection(props) {
     <Typography className={classes.text}>Section Title</Typography>
       <GridList className={classes.gridList} cols={2.5}>
           <ImgMediaCard />
-          <ImgMediaCard />
-          <ImgMediaCard />
       </GridList>
     </div>
   );

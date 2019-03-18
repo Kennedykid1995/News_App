@@ -26,8 +26,6 @@ function BasicSection(props) {
       <Grid container wrap="wrap" spacing={16}>
         <MainCard />
         <ListCard />
-        <ListCard />
-        <ListCard />
       </Grid>
     </div>
   );

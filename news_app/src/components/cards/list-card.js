@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
 import {NavLink} from "react-router-dom"; 
+import {connect} from "react-redux"
+import {fetchNews} from '../../actions/action'; 
 
 const styles = theme => ({
   card: {
@@ -29,7 +31,6 @@ const styles = theme => ({
     width: 151,
     height: 151,
     borderRadius: 10,
-    background: "#18ffff"
   },
   text: {
     marginLeft: 5,
@@ -46,22 +47,31 @@ const styles = theme => ({
   }
 });
 
-function ListCard(props) {
-  const { classes } = props;
 
-  return (
-    <Card className={classes.card}>
+class ListCard extends React.Component {
+
+  componentDidMount = () => {
+    this.props.fetchNews();
+  }
+  render(){
+    const { classes } = this.props;
+
+   return (
+     <>
+    {this.props.news.slice(0,3).map((article) => {
+      return(
+    <Card key={article.id} className={classes.card}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <div className={classes.cover} />
+          <CardMedia className={classes.cover}>{article.urlToImage}</CardMedia>
         </CardContent>
         <div>
           <CardContent className={classes.text}>
             <Typography gutterBottom variant="h5" component="h2">
-              Title
+            {article.title}
             </Typography>
             <Typography component="p">
-              Weather for the weekend will be sunny with clear skies.
+            {article.author}
             </Typography>
             <CardActions>
             <NavLink to="/article" className={classes.navText}>
@@ -74,7 +84,18 @@ function ListCard(props) {
         </div>
       </div>
     </Card>
+       )
+    })}
+    </>
   );
 }
+}
 
-export default withStyles(styles, { withTheme: true })(ListCard);
+const mapStateToProps = state => {
+  return {
+    news: state.news
+  }
+}
+
+
+export default connect(mapStateToProps,{fetchNews}) (withStyles(styles, { withTheme: true })(ListCard));
